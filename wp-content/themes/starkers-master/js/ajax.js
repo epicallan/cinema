@@ -53,21 +53,22 @@ $(function(){
 			onSlideBefore: function($slideElement, oldIndex, newIndex){
 				//adding active class
 								
-					if($slideActive){
+				/*	if($slideActive){
 						//alert('yes');
 						$slideElement.addClass('activeSlide');
 						$slideActive=false;
-					}
+					}*/
 							
 				//$('.slides').removeClass('test');
 				
 		},
 		onSlideAfter:function($slideElement, oldIndex, newIndex){
-			/*if($slideActive==false){
+			
+			if($slideActive==false){
 					
 					$('.slides').removeClass('activeSlide');
-				}*/
-
+				}
+				$slideActive=false
 
 		
 		},
@@ -269,7 +270,7 @@ $(function(){
 	});// end click	
 	
 	//getting movie details
-	
+	 slideCounter=0;
 	 $('#tab1,#tab2').on('click','.now-showing li,.coming-soon li',function(){
 	 	//go to next page
 	 	if($('.individual').is(":visible")){
@@ -290,11 +291,13 @@ $(function(){
 	 	 myIndex=$this.attr('index');
 		 slider.goToSlide(myIndex);
 		 $slideActive=true;
+		 slideCounter++;
 		 //alert('slide active: '+$slideActive)
 		 //scaling slide
-		 //$('.myslide'+myIndex).addClass('activeSlide');
+		 //myslide.addClass('activeSlide');
 		 //$( ".now-showing li:eq("+myIndex+")" ).addClass('activeSlide');
-		 //$this.addClass('activeSlide');
+		 $this.addClass('activeSlide');
+		 
 		 //getting multiple images for slider
 		 slide_id=$this.attr('id');
 		 //multiple slider
@@ -396,8 +399,8 @@ $(function(){
 			 data: ({action : 'get_movie_trailer',url:$url}),
 			 success: function(data,state) {
 			         console.log(data);
-			       // $('#video').removeClass('loader')
-					//$('#video').html(data);
+			        $('#video').removeClass('loader')
+					$('#video').html(data);
 										
 					}
 			 });//end ajax
