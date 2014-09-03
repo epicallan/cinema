@@ -52,7 +52,7 @@ $(function(){
 	 	slideWidth:250,minSlides:1,maxSlides:maxslides,moveSlides:1,auto: true,controls: true,speed:750,pause:pause,autoHover:true,pager:false, 
 			onSlideBefore: function($slideElement, oldIndex, newIndex){
 				//adding active class
-								
+						
 				/*	if($slideActive){
 						//alert('yes');
 						$slideElement.addClass('activeSlide');
@@ -60,15 +60,15 @@ $(function(){
 					}*/
 							
 				//$('.slides').removeClass('test');
-				
+				$('.slides').removeClass('activeSlide');
 		},
 		onSlideAfter:function($slideElement, oldIndex, newIndex){
 			
-			if($slideActive==false){
+		/*	if($slideActive==false){
 					
 					$('.slides').removeClass('activeSlide');
 				}
-				$slideActive=false
+				$slideActive=false*/
 
 		
 		},
@@ -285,7 +285,7 @@ $(function(){
 			 	$('.individual').fadeIn('fast');
 			 	
 		 	}
-
+		 $('.slides').removeClass('activeSlide');
 	 	//moving to selected slide
 	 	 $this=$(this);
 	 	 myIndex=$this.attr('index');
@@ -295,8 +295,12 @@ $(function(){
 		 //alert('slide active: '+$slideActive)
 		 //scaling slide
 		 //myslide.addClass('activeSlide');
-		 //$( ".now-showing li:eq("+myIndex+")" ).addClass('activeSlide');
-		 $this.addClass('activeSlide');
+		 
+		//$( ".now-showing li:eq("+myIndex+")" ).addClass('activeSlide');
+			
+			//$this.addClass('activeSlide');
+					 
+		 $('.myslide'+(myIndex)).addClass('activeSlide');
 		 
 		 //getting multiple images for slider
 		 slide_id=$this.attr('id');
