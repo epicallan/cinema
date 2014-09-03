@@ -225,7 +225,7 @@ function get_movie_trailer(){
 	//get trailer url
 	$url=$_POST['url'];
 	if(!empty($url)){
-		$embed_code = wp_oembed_get($url,array('width'=>500)); 	
+		$embed_code = wp_oembed_get($url,array('width'=>1000)); 	
 		echo $embed_code;
 		
 		}
