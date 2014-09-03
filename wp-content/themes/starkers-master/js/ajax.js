@@ -35,11 +35,11 @@ $(function(){
 	var width= $(window).width();
 	if(width>2500){
 		
-		maxslides=12;
+		maxslides=5;
 		
 	}else if(width<2500 && width >1524){
 		
-		maxslides=8
+		maxslides=4
 	}else if(width <1524 && width >1224){
 		
 	}else{
@@ -49,7 +49,7 @@ $(function(){
 	var $slideActive=false 
 	
 	config={
-	 	slideWidth:250,minSlides:1,maxSlides:maxslides,moveSlides:1,auto: true,controls: true,speed:750,pause:pause,autoHover:true,pager:false, 
+	 	slideWidth:250,minSlides:1,maxSlides:maxslides,moveSlides:1,auto:false,controls: true,speed:750,pause:pause,autoHover:true,pager:false, 
 			onSlideBefore: function($slideElement, oldIndex, newIndex){
 				//adding active class
 						
